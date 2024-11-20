@@ -1,0 +1,644 @@
+body{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  background-color: #353333;
+
+
+
+}
+.container{
+  margin: 0 auto; 
+  padding: 1rem 1.5rem; 
+  max-width: 1200px; 
+  display: flex;
+  flex-direction: column;
+
+}
+section {
+  min-height: 100vh; 
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+a:hover {
+  
+  text-decoration: underline;
+}
+/** header */
+.header {
+  border-radius: 7rem;
+  font-size: 20px;
+  background: #D7D5D5;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between; /* Můžete zkusit 'center' nebo 'space-around' */
+  align-items: center;
+  padding: 0.5rem;
+  z-index: 10;
+  transform: translateY(-100%);
+  transition: transform 0.3s ease-in-out; 
+  position: fixed;
+}
+
+header.hidden {
+  transform: translateY(-100%); /*  zustava skryty jak srcoluju dolu*/ 
+}
+.header:not(.hidden) {
+  transform: translateY(0); 
+} /* když skrloju nahoru zobrazi se */
+
+.navigace ul   {
+  display: flex;
+  gap: 1rem;
+  list-style-type: none;
+  
+
+}
+
+.navigace a {
+  text-decoration: none;
+  padding: 1.2rem; 
+  color: black;
+  scroll-behavior: smooth;
+}
+
+
+
+
+
+.navigace li {
+  color: #ffffff;
+  font-size: 20px;
+  text-decoration: none;
+  padding: 5px ;
+  margin: 0 5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.navigace li::before,
+.navigace li::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: #ffffff;
+  transition: all 0.5s;
+}
+
+.navigace li::before {
+  top: 0;
+  left: 0;
+}
+
+.navigace li::after {
+  bottom: 0;
+  right: 0;
+}
+
+.navigace li:hover::before {
+  width: 100%;
+  transition: width 0.25s ease-in-out;
+}
+
+.navigace li:hover::after {
+  width: 100%;
+  transition: width 0.25s ease-in-out 0.25s;
+}
+
+
+
+
+
+
+
+
+
+.logo {
+  object-fit: cover;
+  height: 50px;
+  flex: 0 1 auto; /* Změna na auto, aby se logo neexpandovalo */
+
+margin-right: 17rem; /* vypada uprostred*/
+
+}
+
+
+
+
+.pridat-header {
+  margin-right: 1rem;
+  background: #FF4742;
+  border: 1px solid #FF4742;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 16px;
+  min-height: 40px;
+  outline: 0;
+  padding: 12px 14px;
+  text-align: center;
+  text-rendering: geometricprecision;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+
+  
+}
+
+
+.pridat-header:hover,
+.pridat-header:active {
+  background-color: initial;
+  background-position: 0 0;
+  color: #FF4742;
+}
+
+.pridat-header:active {
+  opacity: .5;
+}
+
+
+/*******************/
+/*******************/
+
+
+/*********Herosection**********/
+/*******************/
+.herosection{
+  
+  color: #fff;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; 
+  padding:  2rem;
+overflow: hidden; 
+}
+
+
+
+.hero-background {
+
+  position: absolute; /* Pozadí je umístěno absolutně */
+
+  top: 0;
+
+  left: 0;
+
+  width: 100%;
+
+  height: 100%; /* Zajištění, že pozadí vyplní celou sekci */
+
+  object-fit: cover; /* Udržuje poměr stran */
+
+  object-position: center; /* Centering the background */
+
+  opacity: 0.4; /* Nastavení opacity */
+
+  z-index: -1; /* Ujistěte se, že je pozadí pod obsahem */
+  
+}
+
+
+.hero-background img {
+  
+  border-radius: 5rem;
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover; /* Udržuje poměr stran */
+z-index: -1;
+}
+
+
+.hero-content {
+ 
+  position: absolute; /* Nastavení absolutního pozicování */
+  top: 2rem; /* Vzdálenost od horního okraje */
+  left: 2rem; /* Vzdálenost od pravého okraje */
+  max-width: 100%; /* Maximální šířka */
+  text-align: center; /* Text zarovnaný doprava */
+  display: flex; 
+  flex-direction: column; 
+  align-items: flex-start; /* Zarovnání položek k pravému okraji */
+  justify-content: flex-start; /* Obsah zůstává nahoře */
+
+}
+
+.nadpis{
+  font-family: "Instrument Serif", serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 6.4rem;
+  margin: 0;
+}
+.nadpis2{
+color: #9B0000;
+font-family: "Haettenschweiler";
+font-weight: 400;
+font-style: italic;
+font-size: 6.4rem;
+margin: 0;
+}
+.opava{
+  color: #fff;
+  
+}
+.hero-text p{
+  font-family: "Instrument Serif", serif;
+  font-weight: 400;
+  font-size: 3.2rem;
+  opacity: 0.6;
+  color:#fff;
+  margin: 0;
+
+}
+
+
+
+.btn-wrapper{
+  display: flex;
+  align-items: stretch; 
+  justify-content: flex-start; 
+  margin-top: 53px;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  font: 600 24px Inter, sans-serif;
+  gap: 20px; 
+  transition: gap 0.3s ease; /* Přidání animace při najetí */
+  cursor: pointer;
+  
+}
+
+.btn-wrapper:hover{
+  gap: 0px;
+}
+
+
+.line{
+  background-color: #fff;
+  width: 1px;
+  border: 2.5px solid #fff;
+  height: 82px;
+  padding: 1px;
+
+}
+
+
+
+.pridat{
+  box-sizing: border-box;
+  border-radius: 0 50px 50px 0;
+  padding: 26px 42px; 
+  border: 3px solid #fff;
+  margin: 0;
+  transition: all 0.3s ease; 
+  display: inline-block;
+  text-decoration: none;
+}
+
+.pridat:hover{
+  background: #fff; 
+  color: black;
+  text-decoration: none;
+}
+
+
+
+.icons{
+  align-self: flex-start;
+  justify-content: flex-start;
+  display: flex;
+  gap: 9px;
+  margin: 11px 0 0 56px;
+}
+
+.icon {
+  font-size: 2.4rem; /* Zvýšení velikosti ikon */
+  color: #fff; /* Barva ikon */
+  transition: all 0.3s ease; /* Přidání animace při najetí */
+}
+.icon:hover {
+  transform: scale(1.2); /* Zvětšení při najetí myší */
+  color: rgb(63, 127, 211);
+  
+}
+/*******************/
+
+
+/*  about sesction */
+
+/************************/
+
+#about {
+
+}
+
+
+
+
+.about-text{
+
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: auto;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-text h2{
+  font-size: 4.8rem;
+  font-family: "Instrument Serif", serif;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  
+}
+
+.about-text p{
+width: 70ch;
+font-size: 2.4rem;
+font-family: Inter, sans-serif;
+opacity: 0.7;
+max-width: 1200px;
+
+}
+
+
+.about-text .why{
+  max-width: 1200px;
+  margin: 0 auto;
+  margin: 2rem 0 2rem 0;
+  font-size: 4.8rem;
+  font-family: "Instrument Serif", serif;
+
+}
+
+
+
+.fotos{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.fotos img{
+ 
+  object-fit: contain;
+  object-position: center;
+  width: 100%;
+  border-radius: 45px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+
+.text-wrap{
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+
+}
+.text-wrap h3{
+  font-size: 3.6rem;
+  text-decoration: underline;
+  text-transform: uppercase;
+}
+.descripcion{
+  padding: 1rem;
+  background-color:#CBC8C7;
+ 
+  border-radius: 1rem;
+ 
+  font-family: "Instrument Serif", serif;
+  font-size: 2rem;
+}
+
+/* review section*/
+/***************************/
+
+#trenink{
+
+}
+
+.reviews-content{
+
+display: flex;
+justify-content: center;
+align-items: center;
+background-color: #CBC8C7;
+border-radius: 5rem;
+
+}
+
+.review-text{
+  text-align:center;
+  font-family: "Instrument Serif", serif;
+  padding: 1rem;
+
+
+}
+.review-text p{
+font-size: 2rem;
+max-width: 70ch;
+margin-bottom: 6rem;
+}
+.review-text h2{
+font-size: 4rem;
+
+}
+
+.left-arrow , .right-arrow{
+  
+  font-size: 4rem;
+  margin: 2rem;
+}
+
+.time-wrapper{
+  margin-top:3rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  
+ 
+}
+.trenink-time{
+ padding-left: 3rem;
+ padding-right: 3rem;
+  background-color:#D7D5D5;
+  text-transform: uppercase;
+
+  border-radius: 1rem;
+
+  font-family: "Instrument Serif", serif;
+  font-size: 2rem;
+}
+.trenink-time h3{
+  text-transform: uppercase;
+  font-size: 3rem;
+}
+
+
+.trenink-time img{
+  object-fit: cover;
+  height: 45px;
+
+}
+
+
+
+.img1{
+  background-image: url("https://cdn.builder.io/api/v1/image/assets/TEMP/6e7170784909bee0cee07bb718d5a9fbc9dc4e1a4d054f4a2e23e1589604baae?placeholderIfAbsent=true&apiKey=6a5542668e03410185071692f89adceb&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/6e7170784909bee0cee07bb718d5a9fbc9dc4e1a4d054f4a2e23e1589604baae?placeholderIfAbsent=true&apiKey=6a5542668e03410185071692f89adceb&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/6e7170784909bee0cee07bb718d5a9fbc9dc4e1a4d054f4a2e23e1589604baae?placeholderIfAbsent=true&apiKey=6a5542668e03410185071692f89adceb&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/6e7170784909bee0cee07bb718d5a9fbc9dc4e1a4d054f4a2e23e1589604baae?placeholderIfAbsent=true&apiKey=6a5542668e03410185071692f89adceb&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/6e7170784909bee0cee07bb718d5a9fbc9dc4e1a4d054f4a2e23e1589604baae?placeholderIfAbsent=true&apiKey=6a5542668e03410185071692f89adceb&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/6e7170784909bee0cee07bb718d5a9fbc9dc4e1a4d054f4a2e23e1589604baae?placeholderIfAbsent=true&apiKey=6a5542668e03410185071692f89adceb&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/6e7170784909bee0cee07bb718d5a9fbc9dc4e1a4d054f4a2e23e1589604baae?placeholderIfAbsent=true&apiKey=6a5542668e03410185071692f89adceb&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/6e7170784909bee0cee07bb718d5a9fbc9dc4e1a4d054f4a2e23e1589604baae?placeholderIfAbsent=true&apiKey=6a5542668e03410185071692f89adceb");
+}
+.img2{
+  background-image: url("https://cdn.builder.io/api/v1/image/assets/TEMP/20f549befc78029007e34101b0a6ddeb9b142f7e45b9b7b82ff734aa8c7c4604?placeholderIfAbsent=true&apiKey=6a5542668e03410185071692f89adceb");
+}
+.img3{
+  background-image: url("https://cdn.builder.io/api/v1/image/assets/TEMP/7b78b642aae31622cf0ea914724403783a363d9a51570ed6997fd7894be4d555?placeholderIfAbsent=true&apiKey=6a5542668e03410185071692f89adceb");
+  
+}
+
+.gallery-images{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+  overflow: hidden;
+  transition: transform 0.8s ease-in-out;
+}
+
+.slide{
+  background-size: cover;
+  background-position: center;
+  width: 10%;
+  height: 40rem;
+  border-radius: 45px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out;
+  opacity: 0.5;
+}
+
+
+
+.active{
+  flex: 4;
+  transform: scale(1.05);
+  opacity: 1;
+  border-radius: 90px;
+  z-index: 1;
+}
+
+
+
+
+
+
+.left-arrow, .right-arrow {
+  
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.3s ease,  box-shadow 0.3s ease;
+}
+
+.left-arrow:hover, .right-arrow:hover {
+  
+  color: black;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transform: scale(1.5);
+}
+
+.left-arrow:active , .left-arrow:active {
+  transform: scale(1.1); 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); 
+}
+
+
+/* footer */
+footer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5rem;
+  background-color:  #D7D5D5;
+  border-radius: 15px;
+  
+  margin-left:1rem;
+  margin-right: 1rem;
+  padding: 1rem
+}
+
+
+.navigace-footer ul{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  list-style-type: none;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+
+}
+
+.navigace-footer ul a {
+
+ padding: 0.5rem
+}
+
+.footer-content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+}
+.img-footer{
+height: 40px;
+padding: 0.5rem;
+}
+.footer-dracilino{
+  color: #9B0000;
+  text-decoration: underline #9B0000;
+  font-size: 2.4rem; 
+  margin-bottom: 0.5rem; 
+}
+
+.footerText{
+  font-size: 1.2rem; 
+  margin-top: 0.5rem; 
+}
